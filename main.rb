@@ -21,3 +21,8 @@ end
 p student1.enroll?(course1) # true
 p student2.enroll?(course2) # true
 p student2.enroll?(course1) # false
+
+class FormCollector
+  CSV.open("student.csv", "a") do |csv|
+    csv << [params[:first_name], params[:last_name], params[:university], params[:course]]
+end
